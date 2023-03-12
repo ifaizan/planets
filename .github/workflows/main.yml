@@ -40,4 +40,5 @@ jobs:
         author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
         commit-message: Update image tag for CD
         title: Update Image Tag
-        branch: feature
+        branch: new-feature
+        delete-branch: false
