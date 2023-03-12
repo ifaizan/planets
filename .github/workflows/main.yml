@@ -1,0 +1,24 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  BuildAndPush:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Docker Login
+      uses: docker/login-action@v2.1.0
+      with:
+        username: ${{ secrets.DOCKER_USER }}
+        password: ${{ secrets.DOCKER_TOKEN }}
+        
+    - name: Build the Docker image
+      run: |
+        docker build -t ${{ secrets.DOCKER_HOST }}:latest $GITHUB_WORKSPACE/planets-application
+        docker push ${{ secrets.DOCKER_HOST }}:latest
