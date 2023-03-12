@@ -41,3 +41,4 @@ jobs:
         commit-message: Update image tag for CD
         title: Update Image Tag
         branch: new-feature
+        token: ${{ secrets.TOKEN }}
