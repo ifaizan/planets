@@ -31,7 +31,7 @@ jobs:
     
     - name: Updating image tag in manifest
       run: |
-        sed "s|${{ secrets.DOCKER_HOST }}.*|${{ secrets.DOCKER_HOST }}.*:$GITHUB_SHA|g" $GITHUB_WORKSPACE/k8s-manifest/deployment.yaml
+        sed "s|${{ secrets.DOCKER_HOST }}.*|${{ secrets.DOCKER_HOST }}.*:$GITHUB_SHA|g" $GITHUB_WORKSPACE/k8s-manifest/deployment.yml
         cat $GITHUB_WORKSPACE/k8s-manifest/deployment.yml
     
     - name: Create Pull Request
