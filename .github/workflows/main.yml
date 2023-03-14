@@ -27,7 +27,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Updating image tag in manifest
+    - name: Updating image tag in k8s manifest
       run: |
         sed -i "s|${{ secrets.DOCKER_HOST }}.*|${{ secrets.DOCKER_HOST }}:$GITHUB_SHA|g" $GITHUB_WORKSPACE/k8s-manifest/deployment.yml
         cat $GITHUB_WORKSPACE/k8s-manifest/deployment.yml
