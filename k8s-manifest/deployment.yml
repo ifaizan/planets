@@ -16,7 +16,7 @@ spec:
         app: solar-system
     spec:
       containers:
-      - image: faizan1419/planets-demo:6779928490329b7504bd348c050880a9362ce45a
+      - image: faizan1419/planets-demo:f0566c7e459417c0696ef7a03496e44932effc2e
         name: solar-system
         imagePullPolicy: Always
         ports: 
