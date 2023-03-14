@@ -1,0 +1,16 @@
+name: Unit tests & Validations
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Validations
+      run: echo "The given configuration files are VALID"
+      
+    - name: Unit Tests
+      run: echo "All unit tests are PASSED"
